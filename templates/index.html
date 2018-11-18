@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block sub_content %}
+    <div class="jumbotron">
+    <h1> Home </h1>
+    </div>
+    <p>Hi Hi, Pikachu is here <p>
+    <!--flask use a function called url_for to look for static files-->
+    <img src="{{url_for('static', filename="pikachu.png")  }}" height="250" width="250">
+    <p> fruits</p>
+    {{ ht_fruits }}
+    <p>
+
+
+    <h2>{{ session['username'] }}</h2>
+
+    <ul>
+        {% for fruit in ht_fruits %}
+            <li> {{fruit }} </li>
+        {% endfor %}
+
+    </ul>
+    {%  if 'Mango' in ht_fruits %}
+        <p> Mango is in the list </p>
+    {% else %}
+        <p>Mango is not in the list <p>
+    {% endif %}
+    <p>
+{%  endblock %}

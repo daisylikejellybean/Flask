@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block sub_content  %}
+    <div class="jumbotron">
+    <h1>Employee Form</h1>
+    </div>
+    <table boder=1 style="width: 50%">
+        {% for employee in ht_employees %}
+        <tr>
+        <td>{{ employee.name }}</td>
+        <td>{{ employee.age }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}
